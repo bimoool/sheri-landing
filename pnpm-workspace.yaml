@@ -1,0 +1,4 @@
+overrides:
+  electron-to-chromium: 1.5.426
+allowBuilds:
+  sharp: true
