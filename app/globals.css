@@ -393,3 +393,28 @@ p { font-size: 18px; }
 @media(max-width:380px) {
   .stat { padding: 0 10px; }
 }
+
+/* Give each desktop metric the width its content needs. */
+@media(min-width:1181px) {
+  .stats {
+    grid-template-columns: 1.15fr .75fr 1.05fr 1.08fr 1.38fr;
+  }
+  .stat strong {
+    font-size: clamp(44px, 3vw, 52px);
+  }
+}
+
+/* Five columns become cramped before the mobile navigation breakpoint. */
+@media(min-width:761px) and (max-width:1180px) {
+  .stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    row-gap: 32px;
+  }
+  .stats-note {
+    grid-column: 1 / -1;
+    padding-right: 0;
+  }
+  .stat {
+    padding: 0 24px;
+  }
+}
